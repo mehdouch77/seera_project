@@ -22,7 +22,8 @@ variable "deployer_public_key" {
 ```
 
 2. Initialise terraform workspace and create resources:
-```$ terraform init
+```
+   $ terraform init
    $ terraform apply
 ```
 
