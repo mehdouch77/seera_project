@@ -1,0 +1,7 @@
+---
+- name: Install php and its dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  loop: "{{ php_pkgs }}"
+  become: yes

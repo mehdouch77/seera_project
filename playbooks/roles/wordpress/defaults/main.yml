@@ -1,0 +1,11 @@
+# WordPress database settings
+wp_db_name: wordpress
+wp_db_user: wordpress_username
+wp_db_password: wordpress_password
+wp_db_host: terraform-20190827191028133700000001.cez5odjum6kw.us-west-2.rds.amazonaws.com
+
+auto_up_disable: true
+core_update_level: true
+
+# WordPress Version
+wp_version: 5.2.2

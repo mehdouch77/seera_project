@@ -1,0 +1,12 @@
+php_pkgs:
+   - php 
+   - php-fpm
+   - php-pear
+   - php-cgi
+   - php-zip
+   - php-net-socket
+   - php-gettext
+   - php-bcmath
+   - php-mysql 
+   - php-gd
+   - php-xmlrpc

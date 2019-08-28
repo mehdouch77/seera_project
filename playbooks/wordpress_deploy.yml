@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+    - { role: nginx, tags: nginx  }
+    - { role: php, tags: php  }
+    - { role: wordpress, tags: wordpress  }

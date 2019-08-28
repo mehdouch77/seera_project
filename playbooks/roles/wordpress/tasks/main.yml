@@ -1,0 +1,26 @@
+---
+- name: Download WordPress
+  get_url: 
+    url: https://wordpress.org/wordpress-{{ wp_version }}.tar.gz 
+    dest: /srv/wordpress-{{ wp_version }}.tar.gz
+  become: yes
+
+- name: Extract WordPress
+  unarchive:
+    src: /srv/wordpress-{{ wp_version }}.tar.gz
+    dest: /srv/
+    owner: www-data
+    group: www-data
+    copy: no
+    mode: 0755
+  become: yes
+  
+- name: Copy WordPress config file
+  template: 
+    src: wp-config.php 
+    dest: /srv/wordpress/
+    owner: www-data
+    group: www-data
+    mode: 0755
+  become: yes
+  notify: restart nginx
