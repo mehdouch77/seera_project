@@ -53,6 +53,7 @@ resource "aws_route_table_association" "wordpress_stack_route_subnet" {
 /*
 SSH Public Key
 */
+
 resource "aws_key_pair" "ssh_key" {
   key_name   = "deployer_key"
   public_key = "${var.deployer_public_key}"
@@ -195,12 +196,12 @@ resource "aws_instance" "wordpress_stack_server" {
 }
 
 # build the CloudWatch auto-recovery alarm and recovery action
-resource "aws_cloudwatch_metric_alarm" "wordpress_instance_recovery" {
-  alarm_name         = "instance-autorecovery"
+resource "aws_cloudwatch_metric_alarm" "wordpress_stack_server_monitoring" {
+  alarm_name         = "stack-instance-autorecovery"
   namespace          = "AWS/EC2"
   evaluation_periods = "2"
   period             = "60"
-  alarm_description  = "This metric auto recovers EC2 instances"
+  alarm_description  = "This metric auto recovers wordpress server"
  
   alarm_actions = ["arn:aws:automate:${var.aws_region}:ec2:recover"]
  

@@ -5,3 +5,9 @@
     update_cache: yes
   loop: "{{ php_pkgs }}"
   become: yes
+
+- name: Enable php fpm service
+  service: 
+    name: php{{ php_fpm_version }}-fpm 
+    enabled: yes
+  become: yes

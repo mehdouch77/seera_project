@@ -1,0 +1,2 @@
+ansible_ssh_user: ubuntu
+php_fpm_version: 7.2
