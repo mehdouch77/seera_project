@@ -2,7 +2,7 @@
 
 
 # Introduction
-With this project you can deploy an automated wordpress stack with RDS as a DB on AWS cloud
+With this project you can deploy an automated wordpress stack with RDS on AWS cloud
 
 # Prerequisites Details
 To be able to deploy this stack you must have :
@@ -23,13 +23,15 @@ variable "deployer_public_key" {
 
 2. Initialise terraform workspace and create resources:
 ```$ terraform init
- $ terraform apply
+   $ terraform apply
 ```
 
 3. You can see that ansible inventory has been generated dynamically to **playbooks/inventory/seera**
 
 # Deploy the wordpress stack with Ansible
 
-Launch the playbook to deploy the stack:
+1. Launch the playbook to deploy the stack:
 
-`ansible-playbook -i inventory/all wordpress_deploy.yml`
+`$ ansible-playbook -i inventory/all wordpress_deploy.yml`
+
+2. Wordpress should be available within few minutes by visting the server IP on the browser.
