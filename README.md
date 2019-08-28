@@ -35,4 +35,4 @@ variable "deployer_public_key" {
 
 `$ ansible-playbook -i inventory/all wordpress_deploy.yml`
 
-2. Wordpress should be available within few minutes by visting the server IP on the browser.
+2. Wordpress should be available within few minutes by visting http://server_ip.
